@@ -741,7 +741,7 @@ void setup(){
     }
   }
   if(necesitaDatos){
-    String ssidToUse=cfg.valida?cfg.ssid:String("MiFibra-D755"); String passToUse=cfg.valida?cfg.pass:String("7EUqeabJ");
+    String ssidToUse=cfg.valida?cfg.ssid:String(""); String passToUse=cfg.valida?cfg.pass:String("");
     if(!conectarWifi(ssidToUse,passToUse)){ 
       pantallaMensaje("Sin WiFi","Reintento 3min"); 
       if(datosValidosRTC){
@@ -782,7 +782,7 @@ void setup(){
       unsigned long dur = millis()-tPress;
       Serial.printf("BTN_UP dur=%lu\n", dur);
       if(dur >= TIEMPO_PULSACION_LARGA_MS){
-        String ssidToUse=cfg.valida?cfg.ssid:String("MiFibra-D755"); String passToUse=cfg.valida?cfg.pass:String("7EUqeabJ");
+        String ssidToUse=cfg.valida?cfg.ssid:String(""); String passToUse=cfg.valida?cfg.pass:String("");
         pantallaMensaje("Actualizando...","Conectando WiFi");
         if(conectarWifi(ssidToUse,passToUse)){
           configTzTime("CET-1CEST,M3.5.0,M10.5.0/3", "pool.ntp.org", "time.google.com"); struct tm ti; getLocalTime(&ti, 800);
@@ -809,7 +809,7 @@ void setup(){
       if(dur >= TIEMPO_PULSACION_LARGA_MS){
         modoConfiguracion();
         cargarConfig();
-        String ssidToUse=cfg.valida?cfg.ssid:String("MiFibra-D755"); String passToUse=cfg.valida?cfg.pass:String("7EUqeabJ");
+        String ssidToUse=cfg.valida?cfg.ssid:String(""); String passToUse=cfg.valida?cfg.pass:String("");
         if(conectarWifi(ssidToUse,passToUse)){
           configTzTime("CET-1CEST,M3.5.0,M10.5.0/3", "pool.ntp.org", "time.google.com"); struct tm ti; getLocalTime(&ti, 800);
           obtenerTiempo();
