@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weather Sticky - Flasher</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;max-width:720px;margin:0 auto;padding:40px 20px;background:#0f1115;color:#e6e6e6}
+.card{background:#1a1e26;border:1px solid #2a2f3d;border-radius:16px;padding:24px;margin-top:20px}
+h1{margin:0 0 8px;font-size:28px}
+p{color:#9aa0ad;line-height:1.5}
+ol{color:#9aa0ad;line-height:1.6}
+.top{display:flex;justify-content:space-between;align-items:center}
+.lang button{padding:6px 12px;border-radius:999px;border:1px solid #2a2f3d;background:#0f1115;color:#e6e6e6;cursor:pointer;margin-left:6px}
+.lang button.active{background:#7aa2f7;color:#000;border-color:#7aa2f7;font-weight:700}
+a{color:#7aa2f7;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top">
+<h1 style="margin:0">Weather Sticky</h1>
+<div class="lang">
+<button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+<button id="btn-en" onclick="setLang('en')">EN</button>
+</div>
+</div>
+
+<p data-es="reTerminal Sticky - Tiempo y Batería. Flasheo directo desde el navegador (ESP32-S3)" data-en="reTerminal Sticky - Weather & Battery. Direct flashing from browser (ESP32-S3)">reTerminal Sticky - Tiempo y Batería</p>
+
+<div class="card">
+<h3 style="margin-top:0" data-es="Instalar firmware" data-en="Install firmware">Instalar firmware</h3>
+<p data-es="Conecta el Sticky por USB-C, pulsa INSTALL y elige el puerto COM." data-en="Connect Sticky via USB-C, press INSTALL and choose the COM port.">Conecta el Sticky...</p>
+
+<esp-web-install-button manifest="manifest.json" style="display:block;margin:16px 0">
+<button slot="activate" style="padding:12px 24px;border-radius:999px;border:0;background:#7aa2f7;color:#000;font-weight:700;cursor:pointer;font-size:14px">INSTALL - Weather Sticky</button>
+<span slot="unsupported" data-es="Tu navegador no soporta WebSerial. Usa Chrome o Edge en PC." data-en="Your browser doesn't support WebSerial. Use Chrome or Edge on desktop.">Tu navegador no soporta WebSerial. Usa Chrome o Edge en PC.</span>
+</esp-web-install-button>
+
+<ol>
+<li data-es="Conecta el Sticky por USB-C manteniendo BOOT si hace falta" data-en="Connect Sticky via USB-C holding BOOT if needed">Conecta...</li>
+<li data-es="Pulsa INSTALL y selecciona el puerto" data-en="Press INSTALL and select the port">Pulsa INSTALL...</li>
+<li data-es="Espera a que termine (100%)" data-en="Wait until it finishes (100%)">Espera...</li>
+</ol>
+</div>
+
+<p style="margin-top:24px;font-size:13px" data-es="GitHub Pages /docs · ESP32-S3 · 100% navegador · Hecho en La Rioja" data-en="GitHub Pages /docs · ESP32-S3 · 100% browser · Made in La Rioja">GitHub Pages /docs · ESP32-S3 · 100% navegador</p>
+
+<script>
+function setLang(l){
+document.querySelectorAll('[data-es]').forEach(el=>{
+el.textContent = el.getAttribute('data-'+l);
+});
+document.getElementById('btn-es').classList.toggle('active', l==='es');
+document.getElementById('btn-en').classList.toggle('active', l==='en');
+localStorage.setItem('lang', l);
+document.documentElement.lang = l;
+}
+setLang(localStorage.getItem('lang')||'es');
+</script>
+</body>
+</html>
