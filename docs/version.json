@@ -1,7 +1,7 @@
 {
   "version": "1.0.1",
   "url": "https://estebangel-crypto.github.io/sticky-weather/firmware-ota.bin",
-  "notes": "V1.0.1 con OTA y barra de progreso",
+  "notes": "V1.0.1 con OTA sin parpadeo, 7 dias check, multilenguaje fix, sanitizado",
   "mandatory": false,
   "date": "2026-05-13"
 }
