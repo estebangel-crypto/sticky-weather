@@ -1,6 +1,0 @@
-{
-  "version": "1.0.1",
-  "url": "https://estebangel-crypto.github.io/sticky-weather/firmware.bin",
-  "notes": "TEST deteccion V1.0.0 -> V1.0.1 - No flashear, solo banner",
-  "mandatory": false
-}
