@@ -1,13 +1,6 @@
 {
-  "name": "Weather Sticky",
-  "version": "stable",
-  "new_install_prompt_erase": true,
-  "builds": [
-    {
-      "chipFamily": "ESP32-S3",
-      "parts": [
-        { "path": "firmware.bin", "offset": 0 }
-      ]
-    }
-  ]
+  "version": "1.0.1",
+  "url": "https://estebangel-crypto.github.io/sticky-weather/firmware.bin",
+  "notes": "TEST deteccion V1.0.0 -> V1.0.1 - No flashear, solo banner",
+  "mandatory": false
 }
