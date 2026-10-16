@@ -8,7 +8,7 @@ Firmware para Seeed reTerminal Sticky (ESP32-S3) que lo convierte en una estaci�
 
 ## ✨ Características
 
-- 🌤️ Tiempo actual + 4 días (Open-Meteo API)
+- 🌤️ Tiempo actual + 3 días (Open-Meteo API)
 - 🌡️ Temperatura interior con sensor SHT40
 - 🔋 60min deep-sleep, WiFi solo si hace falta (ahorro 18% batería)
 - 🌙 Icono luna al entrar en sueño
