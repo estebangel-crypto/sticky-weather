@@ -1,4 +1,4 @@
-# ☀️ Sticky Weather V57
+# ☀️ Sticky Weather
 
 [logo](docs/logo.png)
 
